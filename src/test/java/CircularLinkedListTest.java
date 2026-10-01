@@ -64,4 +64,19 @@ class CircularLinkedListTest {
         assertTrue(list.find(2));
         assertTrue(list.find(3));
     }
+
+    @Test
+    void testRemoveLastItem() {
+        CircularLinkedList list = new CircularLinkedList();
+
+        list.addItem(1);
+        list.addItem(2);
+        list.addItem(3);
+
+        assertTrue(list.remove(3));
+
+        assertFalse(list.find(3));
+        assertTrue(list.find(1));
+        assertTrue(list.find(2));
+    }
 }
