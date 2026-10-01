@@ -18,4 +18,13 @@ public class CircularLinkedList {
         newNode.next = dummy;
         current.next = newNode;
     }
+
+    public void showList() {
+        Node current = dummy.next;
+        while(current != dummy) {
+            System.out.print(current.value + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
 }
