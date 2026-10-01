@@ -38,4 +38,18 @@ public class CircularLinkedList {
         }
         return false;
     }
+
+    public boolean remove(int value) {
+        Node previous = dummy;
+        Node current = dummy.next;
+        while(current != dummy) {
+            if(current.value == value) {
+                previous.next = current.next;
+                return true;
+            }
+            previous = current;
+            current = current.next;
+        }
+        return false;
+    }
 }
