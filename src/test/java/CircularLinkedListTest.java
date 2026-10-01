@@ -125,4 +125,33 @@ class CircularLinkedListTest {
         assertFalse(list.find(4));
 
     }
+
+    @Test
+    void testLongSequence() {
+        CircularLinkedList list = new CircularLinkedList();
+        // Add 100
+        for (int i = 0; i < 100; i++) {
+            list.addItem(i);
+        }
+        // remove 50
+        for (int i = 0; i < 50; i++) {
+            assertTrue(list.remove(i));
+        }
+        // First 50 gone
+        for (int i = 0; i < 50; i++) {
+            assertFalse(list.find(i));
+        }
+        // Last 50 there
+        for (int i = 50; i < 100; i++) {
+            assertTrue(list.find(i));
+        }
+        // Remove all
+        for (int i = 50; i < 100; i++) {
+            assertTrue(list.remove(i));
+        }
+        // All gone
+        for (int i = 0; i < 100; i++) {
+            assertFalse(list.find(i));
+        }
+    }
 }
