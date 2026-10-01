@@ -55,14 +55,14 @@ public class CircularLinkedList {
 
     public void showReverseList() {
         showReverseListRecursive(dummy.next);
-        system.out.println();
+        System.out.println();
     }
 
-    public void showReverseListRecursive() {
+    public void showReverseListRecursive(Node current) {
         if(current == dummy) {
             return;
         }
         showReverseListRecursive(current.next);
-        system.out.prontln(current.value + " ");
+        System.out.print(current.value + " ");
     }
 }
