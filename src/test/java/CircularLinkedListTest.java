@@ -42,11 +42,26 @@ class CircularLinkedListTest {
         list.addItem(3);
         list.addItem(4);
 
+        assertTrue(list.remove(3));
+
+        assertFalse(list.find(3));
+        assertTrue(list.find(1));
+        assertTrue(list.find(2));
+        assertTrue(list.find(4));
+    }
+
+    @Test
+    void testRemoveFirstItem() {
+        CircularLinkedList list = new CircularLinkedList();
+
+        list.addItem(1);
+        list.addItem(2);
+        list.addItem(3);
+
         assertTrue(list.remove(1));
 
         assertFalse(list.find(1));
         assertTrue(list.find(2));
         assertTrue(list.find(3));
-        assertTrue(list.find(4));
     }
 }
