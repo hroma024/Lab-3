@@ -27,4 +27,15 @@ public class CircularLinkedList {
         }
         System.out.println();
     }
+
+    public boolean find(int value) {
+        Node current = dummy.next;
+        while(current != dummy) {
+            if(current.value == value) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 }
