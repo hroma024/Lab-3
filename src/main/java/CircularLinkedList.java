@@ -52,4 +52,17 @@ public class CircularLinkedList {
         }
         return false;
     }
+
+    public void showReverseList() {
+        showReverseListRecursive(dummy.next);
+        system.out.println();
+    }
+
+    public void showReverseListRecursive() {
+        if(current == dummy) {
+            return;
+        }
+        showReverseListRecursive(current.next);
+        system.out.prontln(current.value + " ");
+    }
 }
